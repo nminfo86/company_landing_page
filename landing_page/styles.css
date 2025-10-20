@@ -1,0 +1,522 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #ecf0f1;
+    --white: #ffffff;
+    --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 15px 60px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #bbbcbf 0%, #ffffff 100%);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Styles */
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+    color: var(--white);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: moveBackground 20s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+.logo {
+    position: relative;
+    z-index: 1;
+}
+
+.logo h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 40px;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--white) 0%, var(--bg-light) 100%);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    font-weight: 300;
+}
+
+/* Photo Grid Section - 2025 Modern Design */
+.photo-grid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0;
+    min-height: 100vh;
+    background: var(--bg-light);
+}
+
+/* Photo Card Styling - 2025 Modern Design */
+.photo-card {
+    position: relative;
+    min-height: 50vh;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.photo-card:hover .photo-background {
+    transform: scale(1.1);
+}
+
+/* Geometric Pattern Overlay */
+.geometric-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(30deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+        linear-gradient(150deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+        linear-gradient(30deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05)),
+        linear-gradient(150deg, rgba(255, 255, 255, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(255, 255, 255, 0.05) 87.5%, rgba(255, 255, 255, 0.05));
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px;
+    opacity: 0.3;
+}
+
+/* Glassmorphism Effect */
+.glass-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(0px);
+    transition: all 0.6s ease;
+}
+
+.photo-card:hover .glass-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/* Hover Effect Gradient */
+.hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.photo-card:hover .hover-effect {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Card Content */
+.card-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 60px 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--white);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUpFade 0.8s ease forwards;
+}
+
+@keyframes slideUpFade {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-number {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    line-height: 1;
+    transition: all 0.6s ease;
+}
+
+.photo-card:hover .card-number {
+    color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 30px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: var(--white);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Logo Image Styling */
+.card-icon .logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)) brightness(1.1);
+}
+
+.photo-card:hover .card-icon {
+    transform: rotateY(360deg) scale(1.1);
+}
+
+.card-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.2;
+    transition: all 0.4s ease;
+}
+
+.photo-card:hover .card-title {
+    transform: translateX(10px);
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    transition: all 0.4s ease;
+}
+
+.photo-card:hover .card-description {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+}
+
+.card-link:hover::before {
+    left: 100%;
+}
+
+.card-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.4s ease;
+}
+
+.card-link:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* Footer */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 40px;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 400;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-links span {
+    opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .photo-card {
+        min-height: 60vh;
+    }
+
+    .card-number {
+        font-size: 4rem;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 20px;
+    }
+
+    .logo h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .header {
+        padding: 40px 20px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card {
+        min-height: 70vh;
+    }
+
+    .card-content-wrapper {
+        padding: 40px 30px;
+    }
+
+    .card-title {
+        font-size: 2rem;
+    }
+
+    .card-description {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .card-number {
+        font-size: 3.5rem;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .photo-card {
+        min-height: 60vh;
+    }
+
+    .card-content-wrapper {
+        padding: 30px 20px;
+    }
+
+    .card-title {
+        font-size: 1.6rem;
+    }
+
+    .card-description {
+        font-size: 0.95rem;
+    }
+
+    .card-number {
+        font-size: 3rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .card-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .card-link {
+        padding: 14px 28px;
+        font-size: 0.9rem;
+    }
+}
