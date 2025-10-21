@@ -15,7 +15,7 @@ Create a beautiful, modern, and SEO-optimized landing page for Bouhezila Group, 
    - Icon: Industry/manufacturing symbol
    - URL: https://industry.bouhezila.com (update with actual URL)
 
-2. **Bouhezila i-Tech**
+2. **B i-Tech**
    - Focus: Digital transformation, software solutions, and IT services
    - Theme Color: Blue/Green (#3498db, #2ecc71)
    - Icon: Technology/computer symbol
@@ -145,7 +145,7 @@ landing_page/
 ### Update Company URLs
 In `index.html`, find and replace these href values:
 - Bouhezila Industry: Line ~54
-- Bouhezila i-Tech: Line ~70
+- B i-Tech: Line ~70
 - ELITA: Line ~86
 
 ### Update Contact Information
