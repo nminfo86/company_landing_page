@@ -22,7 +22,7 @@ Open `index.html` and modify the `href` attributes in each activity card:
 <!-- Bouhezila Industry -->
 <a href="https://industry.bouhezila.com" class="btn-link">
 
-<!-- Bouhezila i-Tech -->
+<!-- B i-Tech -->
 <a href="https://itech.bouhezila.com" class="btn-link">
 
 <!-- ELITA -->
