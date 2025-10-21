@@ -34,8 +34,8 @@ document.querySelectorAll('.photo-card').forEach((card, index) => {
 // Add click event to cards for better mobile experience
 document.querySelectorAll('.photo-card').forEach(card => {
     card.addEventListener('click', function(e) {
-        // If the click is not on the link itself, trigger the link click
-        if (!e.target.closest('.card-link')) {
+        // If the click is not on the link itself or whatsapp button, trigger the link click
+        if (!e.target.closest('.card-link') && !e.target.closest('.whatsapp-btn')) {
             const link = this.querySelector('.card-link');
             if (link) {
                 window.location.href = link.href;
